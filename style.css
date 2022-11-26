@@ -12,5 +12,9 @@ main {
 }
 
 main {
- background-image: url();
+ background-image: url("https: //unsplash.com/photos/ioy3bN5Irew");
+ background-size: cover;
+ background-position: center 0%;
+ position: relative;
+ z-index: 2;
 }
