@@ -11,12 +11,19 @@ main {
  background-color: #18181b;
 }
 
+body[data-nav="true"] > main {
+ transform: translateY(-50%);
+}
+
 main {
  background-image: url("https://images.unsplash.com/photo-1501803624108-4ac0e0b7355a");
  background-size: cover;
  background-position: center 0%;
  position: relative;
  z-index: 2;
+ 
+ /* animation */
+ transition: transform 500ms;
 }
 
 #nav-toggle {
@@ -45,4 +52,15 @@ main {
 
 #nav-toggle:active {
  transform: translateX(-50%) scale(0.96);
+}
+
+/* change */
+#nav-toggle > i {
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%) scale(0.9);
+ color: rgb(246, 231, 224);
+ font-size: 1.75rem;
+ opacity: 0;
 }
