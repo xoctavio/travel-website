@@ -36,7 +36,7 @@ nav {
  overflow: hidden;
 }
 
-#nav-toggle {
+#menu-btn {
  height: 5rem;
  width: 5rem;
  position: fixed;
@@ -56,16 +56,16 @@ nav {
  transition-duration: 400ms;
 }
 
-#nav-toggle:hover {
+#menu-btn:hover {
  transform: translateX(-50%) scale(1.04);
 }
 
-#nav-toggle:active {
+#menu-btn:active {
  transform: translateX(-50%) scale(0.96);
 }
 
 /* change */
-#nav-toggle > i {
+#menu-btn > i {
  position: absolute;
  left: 50%;
  top: 50%;
@@ -105,4 +105,36 @@ body[data-nav="true"]>nav>#nav-links {
  border-radius: 0.5rem;
  margin-top: 0.75rem;
  object-fit: cover;
+}
+
+/* hamburger menu */
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+ position: absolute;
+ width: 2rem;
+ height: 2px;
+ background: white;
+ transform: rotate(0);
+ transition: all 0.5s;
+}
+
+.hamburger-middle {
+ transform: translateY(7px);
+}
+
+.hamburger-bottom {
+ transform: translateY(14px);
+}
+
+.open .hamburger-top {
+ transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+ display: none;
+}
+
+.open .hamburger-bottom {
+ transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
