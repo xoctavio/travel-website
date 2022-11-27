@@ -9,10 +9,21 @@ main {
  height: 100vh;
  width: 100vw;
  background-color: #18181b;
+ color: white;
+ font-family: 'Manrope', sans-serif;
 }
 
 body[data-nav="true"] > main {
  transform: translateY(-50%);
+}
+
+#title {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 99;
+ font-size: 1.5rem;
 }
 
 main {
@@ -26,6 +37,7 @@ main {
  transition: transform 500ms;
 }
 
+/* navbar */
 nav {
  height: 50vh;
  width: 100%;
@@ -36,6 +48,52 @@ nav {
  overflow: hidden;
 }
 
+#nav-links {
+ display: flex;
+ justify-content: center;
+ gap: clamp(1rem, 2vw, 2rem);
+ margin-top: clamp(2rem, 2vw, 3rem);
+ padding: 0rem clamp(1rem, 2vw, 2rem);
+ transform: translateY(70%) scale(0.9);
+ transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+}
+
+body[data-nav="true"]>nav>#nav-links {
+ transform: translateY(0%) scale(1);
+}
+
+#nav-links>.nav-link {
+ text-decoration: none;
+}
+
+#nav-links>.nav-link>.nav-link-label {
+ color: white;
+ font-size: 1.25rem;
+}
+
+#nav-links>.nav-link>.nav-link-image {
+ width: max(30vw, 100px);
+ aspect-ratio: 1.8 / 1;
+ border-radius: 0.5rem;
+ margin-top: 0.75rem;
+ object-fit: cover;
+
+ /* animation */
+ transition: transform;
+ transition-timing-function: ease;
+ transition-duration: 300ms;
+}
+
+/* nav transform */
+#nav-links>.nav-link>.nav-link-image:hover {
+ transform: scale(1.02);
+}
+
+#nav-links>.nav-link>.nav-link-image:active {
+ transform: scale(0.98);
+}
+
+/* button */
 #menu-btn {
  height: 5rem;
  width: 5rem;
@@ -64,54 +122,13 @@ nav {
  transform: translateX(-50%) scale(0.96);
 }
 
-/* change */
-#menu-btn > i {
- position: absolute;
- left: 50%;
- top: 50%;
- transform: translate(-50%, -50%) scale(0.9);
- color: rgb(246, 231, 224);
- font-size: 1.75rem;
- opacity: 0;
-}
-
-#nav-links {
- display: flex;
- justify-content: center;
- /* flex-wrap: wrap; */
- gap: clamp(1rem, 2vw, 2rem);
- margin-top: clamp(2rem, 2vw, 3rem);
- padding: 0rem clamp(1rem, 2vw, 2rem);
- transform: translateY(70%) scale(0.9);
- transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
-}
-
-body[data-nav="true"]>nav>#nav-links {
- transform: translateY(0%) scale(1);
-}
-
-#nav-links > .nav-link {
- text-decoration: none;
-}
-
-#nav-links > .nav-link > .nav-link-label {
- color: white;
- font-size: 1.25rem;
-}
-
-#nav-links>.nav-link>.nav-link-image {
- width: max(30vw, 200px);
- aspect-ratio: 1.8 / 1;
- border-radius: 0.5rem;
- margin-top: 0.75rem;
- object-fit: cover;
-}
-
 /* hamburger menu */
 .hamburger-top,
 .hamburger-middle,
 .hamburger-bottom {
  position: absolute;
+ right: 30%;
+ top: 40%;
  width: 2rem;
  height: 2px;
  background: white;
