@@ -1,5 +1,13 @@
 # travel-website
 
+- nav menu mockup for a travel site
+
+deployed site:
+
+https://xoctavio.github.io/travel-website/
+
+# credits
+
 idea:
 
 https://www.buildinamsterdam.com/cases
